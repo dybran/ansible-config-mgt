@@ -1,0 +1,18 @@
+nfs-server=172.31.86.100 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=dybran-ec2.pem
+web01=172.31.87.226 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=dybran-ec2.pem
+web02=172.31.91.203 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=dybran-ec2.pem 
+db01=172.31.93.48 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=dybran-ec2.pem 
+load-balancer=172.31.57.49 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=dybran-ec2.pem 
+
+[nfs]
+nfs-server
+
+[wbsrvrs]
+web01
+web02
+
+[dbsrvr]
+db01
+
+[lb]
+load-balancer
