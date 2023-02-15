@@ -1,0 +1,5 @@
+web01-uat ansible_host=172.31.95.123 ansible_ssh_user=ec2-user
+web02-uat ansible_host=172.31.82.183 ansible_ssh_user=ec2-user 
+
+[all:vars]
+ansible_ssh_private_key_file=dybran-ec2.pem
