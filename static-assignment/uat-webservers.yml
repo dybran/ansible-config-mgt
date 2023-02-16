@@ -1,4 +1,4 @@
 ---
-- hosts: wb-uat
+- hosts: all
   roles:
    - webserver
