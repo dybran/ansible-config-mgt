@@ -1,4 +1,4 @@
-  pipeline {
+pipeline {
     agent any
 
   stages {
@@ -17,5 +17,30 @@
         }
       }
     }
+
+    stage('package') {
+      steps {
+        script {
+          sh 'echo "Packaging Stage"'
+        }
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        script {
+          sh 'echo "Deploying Stage"'
+        }
+      }
+    }
+
+    stage('clean up') {
+      steps {
+        script {
+          sh 'echo "clean up Stage"'
+        }
+      }
+    }
     }
 }
+
