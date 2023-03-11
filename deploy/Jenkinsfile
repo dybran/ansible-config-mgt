@@ -1,53 +1,30 @@
 pipeline {
-    agent any
+   agent any
 
-  stages {
-    stage('initial cleanup'){
+   environment {
+    ANSIBLE_CONFIG='${WORKSPACE}/deploy/ansible.cfg'
+   }
+
+   stages {
+
+    stage('Checkout SCM') {
       steps {
-        dir("${WORKSPACE}") {
-          deleteDir()
-        }
-      }
-    }
-    stage('Build') {
-      steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
+        git branch: 'feature/jenkinsfile-stages-2', url: 'https://github.com/dybran/ansible-config-mgt.git'
       }
     }
 
-    stage('Test') {
+    stage('Setting Roles Path in the Ansible.cfg File') {
       steps {
-        script {
-          sh 'echo "Testing Stage"'
-        }
+        sh 'echo ${WORKSPACE}'
+        sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg'
       }
     }
 
-    stage('package') {
+    stage('Run Ansible Playbook') {
       steps {
-        script {
-          sh 'echo "Packaging Stage"'
-        }
-      }
-    }
+        ansiblePlaybook colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
 
-    stage('deploy') {
-      steps {
-        script {
-          sh 'echo "Deploying Stage"'
-        }
       }
     }
-
-    stage('cleanup'){
-      steps {
-        dir("${WORKSPACE}") {
-          deleteDir()
-        }
-      }
-    }
-    }
+   }
 }
-
