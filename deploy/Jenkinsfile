@@ -9,7 +9,7 @@ pipeline {
 
     stage('Checkout SCM') {
       steps {
-        git branch: 'feature/jenkinsfile-stages-2', url: 'https://github.com/dybran/ansible-config-mgt.git'
+        git branch: 'feature/jenkinspipeline-stages-2', url: 'https://github.com/dybran/ansible-config-mgt.git'
       }
     }
 
@@ -22,7 +22,7 @@ pipeline {
     }
 
     stage('Run Ansible Playbook') {
-      
+
       steps {
         ansiblePlaybook colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
 
