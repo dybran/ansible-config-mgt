@@ -43,11 +43,10 @@ pipeline {
 
     stage('cleanup'){
       steps {
-        dir("${WORKSPACE}") {
-          deleteDir()
+          cleanWs()
         }
       }
     }
-    }
-}
+  }
+
 
