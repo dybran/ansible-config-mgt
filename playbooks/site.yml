@@ -19,4 +19,9 @@
 - name: installing nginx
   hosts: nginx
 - name: nginx assignment
-  import_playbook: ../static-assignments/webservers.yml
+  import_playbook: ../static-assignments/nginx.yml
+
+- name: installing database
+  hosts: db
+- name: db assignment
+  import_playbook: ../static-assignments/db.yml
