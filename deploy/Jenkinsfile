@@ -6,6 +6,10 @@ pipeline {
     ANSIBLE_CONFIG='${WORKSPACE}/deploy/ansible.cfg'
    }
 
+  parameters {
+      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
+  }
+
    stages {
 
     stage('Initial Clean Up') {
@@ -35,9 +39,17 @@ pipeline {
     stage('Run Ansible Playbook') {
 
       steps {
-        ansiblePlaybook colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
+        ansiblePlaybook colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'
 
       }
     }
+
+    stage('Clean Up') {
+      steps {
+         cleanWs(cleanWhenAborted: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, cleanWhenFailure: true)
+      }
+
+    }
+     
    }
 }
