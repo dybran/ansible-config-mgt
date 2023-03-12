@@ -43,5 +43,13 @@ pipeline {
 
       }
     }
+
+    stage('Clean Up') {
+      steps {
+         cleanWs(cleanWhenAborted: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, cleanWhenFailure: true)
+      }
+
+    }
+     
    }
 }
