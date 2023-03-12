@@ -6,6 +6,13 @@ pipeline {
    }
 
    stages {
+    
+    stage('Initial Clean Up') {
+      dir('${WORKSPACE') {
+        deleteDir()
+      }
+      
+    }
 
     stage('Checkout SCM') {
       steps {
