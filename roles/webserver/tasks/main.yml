@@ -4,6 +4,7 @@
   yum:
     name: "httpd"
     state: present
+  # tags: packages
 
 - name: install git
   yum:
