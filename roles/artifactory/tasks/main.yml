@@ -30,7 +30,7 @@
 
 - name: Install Artifactory
   yum:
-   name: jfrog-artifactory
+   name: jfrog-artifactory-oss
    state: present
 
 - name: Start Artifactory
