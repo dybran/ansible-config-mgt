@@ -1,11 +1,4 @@
 ---
-- name: Install wget and unzip
-  yum:
-    name: 
-     - wget
-     - unzip
-    state: present
-
 - name: Install Java 11
   yum:
    name: java-11-openjdk-devel
