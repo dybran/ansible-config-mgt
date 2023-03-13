@@ -4,6 +4,15 @@
    name: java-11-openjdk-devel
    state: present
 
+- name: Configuring java path
+  ansible.builtin.template:
+    src: templates/bash-profile.j2
+    dest: .bash_profile
+  
+
+- name: reload the /etc/profile
+  shell: source ~/.bash_profile
+
 - name: Download/fetch the repo from the internet
   get_url:
    url: https://release.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo
