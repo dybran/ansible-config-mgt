@@ -8,4 +8,4 @@
 <SonarQube-Private-IP-Address>
 
 [artifact_repository]
-172.31.91.132
+172.31.91.132 ansble_ssh_user=ec2-user
