@@ -6,25 +6,18 @@
     name: java-11-openjdk-devel
     state: present
 
-
-# - name: Download/fetch the Repo from jfrog.io
-#   get_url:
-#     url:  https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo 
-#     dest: /home/ec2-user/jfrog-artifactory-rpms.repo
-#     mode: '0755'
- 
-# - name: Copy the downloaded file to the etc repo
-#   copy:
-#     src: /home/ec2-user/jfrog-artifactory-rpms.repo
-#     dest: /etc/yum.repos.d/jfrog-artifactory-rpms.repo
-#     remote_src: yes
-#     follow: yes
-
 - name: Download/fetch the Repo from jfrog.io
   get_url:
-    url:  https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/ 
-    dest: /home/ec2-user/jfrog-artifactory-oss
+    url:  https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo 
+    dest: /home/ec2-user/jfrog-artifactory-rpms.repo
     mode: '0755'
+ 
+- name: Copy the downloaded file to the etc repo
+  copy:
+    src: /home/ec2-user/jfrog-artifactory-rpms.repo
+    dest: /etc/yum.repos.d/jfrog-artifactory-rpms.repo
+    remote_src: yes
+    follow: yes
 
 - name: Update repo
   yum:
