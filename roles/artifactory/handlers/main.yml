@@ -1,7 +1,10 @@
 ---
-# handlers file for distribution
-- name: restart artifactory
-  become: yes
+# handlers file for artifactory
+- name: systemctl daemon-reload
   systemd:
-    name: "{{ artifactory_daemon }}"
+    daemon_reload: yes
+
+- name: restart artifactory
+  service:
+    name: artifactory
     state: restarted
