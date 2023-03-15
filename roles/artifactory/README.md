@@ -1,5 +1,5 @@
 ### __artifactory__ ###
-The artifactory role installs the Artifactory Pro software onto the host. Per the Vars below, it will configure a node as primary or secondary. This role uses secondary roles artifactory_nginx to install nginx.
+The artifactory role installs the Artifactory Pro software onto the host. Per the Vars below, it will configure a node as primary or secondary. This role uses secondary roles artifactory_nginx to install nginx..
 
 ### __Role Variables__ ###
 server_name: mandatory This is the server name. eg. "artifactory.54.175.51.178.xip.io"
