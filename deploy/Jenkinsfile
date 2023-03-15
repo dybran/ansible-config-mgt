@@ -24,7 +24,7 @@ pipeline {
 
     stage('Checkout SCM') {
       steps {
-        git branch: 'feature/jenkinspipeline-stages-2', url: 'https://github.com/dybran/ansible-config-mgt.git'
+        git branch: 'main', url: 'https://github.com/dybran/ansible-config-mgt.git'
       }
     }
 
