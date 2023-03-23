@@ -16,10 +16,10 @@
 # - import_playbook: ../static-assignments/loadbalancers.yml
 #   when: load_balancer_is_required 
 
-# - name: installing nginx
-#   hosts: nginx
-# - name: nginx assignment
-#   import_playbook: ../static-assignments/nginx.yml
+- name: installing nginx
+  hosts: nginx
+- name: nginx assignment
+  import_playbook: ../static-assignments/nginx.yml
 
 - name: installing database
   hosts: db
