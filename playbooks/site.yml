@@ -34,5 +34,4 @@
 - name: Deploying Todo Application
   hosts: todo
 - name: Deploy assignment
-  import_playbook: ../static-assignments/adeployment.yml
-  
+  import_playbook: ../static-assignments/deployment.yml
