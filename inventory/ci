@@ -4,7 +4,7 @@
 [nginx]
 <Nginx-Private-IP-Address>
 
-[sonarqube]
-<SonarQube-Private-IP-Address>
+sonarqube ansible_host=172.31.80.85 ansble_ssh_user=ec2-user
 
 artifactory ansible_host=172.31.84.71 ansble_ssh_user=ec2-user
+
