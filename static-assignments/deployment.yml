@@ -52,7 +52,7 @@
         url: http://34.238.114.15:8082/artifactory/dybran/php-todo
         dest: /home/ec2-user/
         url_username: admin
-        url_password: Sa4la2xa#
+        url_password: cmVmdGtuOjAxOjE3MTEyMjQ3ODA6aWtCcE5XaFJRaWRJbkYzZU1xMGt0eU1sT3pO
 
 
     - name: Unzip the Artifacts
