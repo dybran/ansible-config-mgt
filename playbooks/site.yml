@@ -21,12 +21,18 @@
 # - name: nginx assignment
 #   import_playbook: ../static-assignments/nginx.yml
 
-- name: installing database
-  hosts: db
-- name: db assignment
-  import_playbook: ../static-assignments/db.yml
+# - name: installing database
+#   hosts: db
+# - name: db assignment
+#   import_playbook: ../static-assignments/db.yml
 
 # - name: installing artifactory
 #   hosts: artifactory
 # - name: Artifactory assignment
 #   import_playbook: ../static-assignments/artifactory.yml
+
+- name: Deploying Todo Application
+  hosts: todo
+- name: Deploy assignment
+  import_playbook: ../static-assignments/adeployment.yml
+  
