@@ -68,7 +68,7 @@
         force: yes
         remote_src: yes
 
-    - name: Remove Nginx default page
+    - name: Remove default page
       file:
         path: /etc/httpd/conf.d/welcome.conf
         state: absent
