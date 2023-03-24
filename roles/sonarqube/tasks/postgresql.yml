@@ -5,12 +5,12 @@
     create: yes
 
 - name: Download PostgreSQL software key
-  ansible.builtin.yum_key:
+  ansible.builtin.apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
 
 - name: install postgresql
-  ansible.builtin.yum:
+  ansible.builtin.apt:
     pkg:
     - postgresql
     - postgresql-contrib

@@ -19,7 +19,7 @@
 
 
 - name: Add ppa  repository 
-  ansible.builtin.yum_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:linuxuprising/java
 
 
