@@ -18,11 +18,6 @@
     create: yes
 
 
-- name: Add ppa  repository 
-  ansible.builtin.apt_repository:
-    repo: ppa:linuxuprising/java
-
-
 - name: install python3
   ansible.builtin.apt:
     name: 
@@ -31,6 +26,13 @@
       - python3-dev
       - libpq-dev
     state: present
+
+- name: Add ppa  repository 
+  ansible.builtin.apt_repository:
+    repo: ppa:linuxuprising/java
+
+
+
 
 - name: Install setuptools
   pip:
