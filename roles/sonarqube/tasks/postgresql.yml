@@ -31,7 +31,6 @@
 
 - name: Create a new database sonarqubedb
   become_user: postgres
-  become: yes
   community.postgresql.postgresql_db:
     name: sonarqube
     encoding: UTF-8
